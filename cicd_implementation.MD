@@ -92,3 +92,29 @@ There are two ways to trigger the Jenkins job.
   - I will need access to the repo or I can provide the details and you just create it there.
   - As soon as there are changes in the repo this webhook will trigger the jenkins job.
   - If bitbucket server is able to access the jenkins server publicly then this one is the best option.
+
+---
+
+## Final decision
+
+---
+
+- We are going with the approach 1.
+- We will be resuing the ansible playbooks already written.
+- The trigger part will be taken care by the jenkins
+- If there is an error then Jenkins job will fail, and you will get notified.
+- If one is successful, the other two will also be successful.
+
+## Addiontal features
+
+---
+ 
+If you need, we can have few more extra features at the end of pipeline.
+- Email notification
+    - If build fails, it will trigger the mail to certain devs or devops engineer with the possible error message.
+    - For this to work, there should be a SMTP server ( mail server ).
+    - There are plenty of free mail server availble in the market, just the registration is required.
+    - e.g. google free smtp service
+- HTML report
+    - As soon as cicd pipeline finishes, jenkins will publish a HTML report on jenkins Dashboard
+    - This report may contain the the job result and the steps involved or anything you want to add here.
